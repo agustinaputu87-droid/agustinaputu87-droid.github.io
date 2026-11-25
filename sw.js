@@ -1,5 +1,5 @@
 /* MANAGEMENT PANDITA: cache gambar & cadangan halaman */
-var V="mp-290";
+var V="mp-2100";
 self.addEventListener("install",function(e){self.skipWaiting()});
 self.addEventListener("activate",function(e){e.waitUntil(caches.keys().then(function(k){return Promise.all(k.filter(function(x){return x!==V&&x!==V+"-img"}).map(function(x){return caches.delete(x)}))}).then(function(){return self.clients.claim()}))});
 self.addEventListener("fetch",function(e){
